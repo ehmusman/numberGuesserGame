@@ -26,7 +26,7 @@ function gameWrapper(){
  container3.style.display = 'none'
 let max = 10,
     min = 1,
-    guessLeft = 3,
+    guessLeft = 5,
     winningNum = getRandomNum(min,max);
 
 // UI elements
@@ -107,7 +107,7 @@ function loss(msg , color){
 function retry(msg,color){
   message.textContent = msg;
   message.style.color = color;
-  guessInput.textContent=''
+  guessInput.textContent="";
   guessInput.style.borderColor = color;
 }
 
