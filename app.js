@@ -21,26 +21,30 @@ container1.style.display = 'none'
 container3.style.display = 'block'
 setTimeout(gameWrapper,1500);
 }
-function gameWrapper(){
-  container2.style.display = 'block'
- container3.style.display = 'none'
 let max = 10,
     min = 1,
-    guessLeft = 5,
-    winningNum = getRandomNum(min,max);
+    guessLeft = 5;
 
-// UI elements
+    // UI elements
 const game = document.querySelector('#game'),
       minNum = document.querySelector('#min-num'),
       maxNum = document.querySelector('#max-num'),
       guessInput = document.querySelector('#guess-input'),
       guessBtn = document.querySelector('#guess-btn'),
-      message = document.querySelector('.message')
+      message = document.querySelector('.message'),
+      tries = document.querySelector('span#tries'),
       tryAgain = document.querySelector('span#try-again');
+
 
 // Assign UI min and Max Number
 minNum.textContent = min;
 maxNum.textContent = max;
+tries.textContent = guessLeft;
+
+function gameWrapper(){
+  container2.style.display = 'block'
+ container3.style.display = 'none'
+let winningNum = getRandomNum(min,max);
 
 // Listen to Submit Button
 guessBtn.addEventListener('click', function(){
@@ -64,7 +68,7 @@ let guess = parseInt(guessInput.value);
   }
   if (guess === winningNum){
     guessInput.disabled = true;
-    won (`Hurry! YOU WON, ${guess} is correct answer`, 'green')
+    won (`Horrey! YOU WON, ${guess} is correct answer`, 'green')
   }
 
 });
@@ -107,7 +111,7 @@ function loss(msg , color){
 function retry(msg,color){
   message.textContent = msg;
   message.style.color = color;
-  guessInput.textContent="";
+  guessInput.value='';
   guessInput.style.borderColor = color;
 }
 
