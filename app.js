@@ -23,7 +23,7 @@ setTimeout(gameWrapper,1500);
 }
 let max = 10,
     min = 1,
-    guessLeft = 5;
+    guessLeft = 10;
 
     // UI elements
 const game = document.querySelector('#game'),
