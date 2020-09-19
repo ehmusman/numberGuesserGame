@@ -1,3 +1,3 @@
 # numberGuesserGame
 check the followimg url
-numberGuesserGame-ehmusman.surge.sh
+http://numberGuesserGame-ehmusman.surge.sh
